@@ -30,7 +30,6 @@ class CharacterViewModel: ObservableObject {
                     self.info = response.info
                     self.isLoading = false
                     self.characters.append(contentsOf: response.results)
-                   // self.getIsFavourite()
                 }
             } catch  {
                 DispatchQueue.main.async {

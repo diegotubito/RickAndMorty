@@ -37,6 +37,7 @@
 		F15FB9712AA7A674001580D2 /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15FB9702AA7A674001580D2 /* ProfileImageView.swift */; };
 		F1C2F2BA2AA7C53200FED3C9 /* Rick_MortyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2F2B92AA7C53200FED3C9 /* Rick_MortyTests.swift */; };
 		F1C2F2C12AA7C56300FED3C9 /* UserDefaultTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2F2C02AA7C56300FED3C9 /* UserDefaultTest.swift */; };
+		F1C2F2D22AA7CB9800FED3C9 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2F2D12AA7CB9800FED3C9 /* ImageLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		F1C2F2B72AA7C53200FED3C9 /* Rick&MortyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rick&MortyTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1C2F2B92AA7C53200FED3C9 /* Rick_MortyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rick_MortyTests.swift; sourceTree = "<group>"; };
 		F1C2F2C02AA7C56300FED3C9 /* UserDefaultTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultTest.swift; sourceTree = "<group>"; };
+		F1C2F2D12AA7CB9800FED3C9 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +257,7 @@
 				F15FB96C2AA79C5A001580D2 /* CharacterCell.swift */,
 				F15FB96E2AA79F23001580D2 /* CharacterCellViewModel.swift */,
 				F15FB9702AA7A674001580D2 /* ProfileImageView.swift */,
+				F1C2F2D12AA7CB9800FED3C9 /* ImageLoader.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				F15FB9622AA78AA6001580D2 /* String+Extension.swift in Sources */,
 				F15FB93F2AA78964001580D2 /* ApiNetworkModel.swift in Sources */,
 				F15FB9612AA78AA6001580D2 /* ImageRepository.swift in Sources */,
+				F1C2F2D22AA7CB9800FED3C9 /* ImageLoader.swift in Sources */,
 				F15FB90D2AA77C39001580D2 /* Rick_MortyApp.swift in Sources */,
 				F15FB9592AA78AA6001580D2 /* CharacterUseCase.swift in Sources */,
 				F15FB95D2AA78AA6001580D2 /* LocationModel.swift in Sources */,

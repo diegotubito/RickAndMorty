@@ -12,14 +12,47 @@ struct LocationView: View {
     @StateObject var viewModel: LocationViewModel
     
     var body: some View {
-        VStack {
-            Text(viewModel.location?.name ?? "")
-            Text("type: " + (viewModel.location?.type ?? ""))
-            Text("Number of residents: " + String(viewModel.location?.residents.count ?? 0))
-            Text("Dimension: " + (viewModel.location?.dimension ?? ""))
+        ScrollView {
+            HStack {
+                VStack(alignment: .leading, spacing: 20) {
+                    
+                    Text(viewModel.location?.name ?? "")
+                        .font(.title)
+                        .fontWeight(.bold)
+                    
+                    HStack {
+                        Image(systemName: "info.circle")
+                        Text("Type: \(viewModel.location?.type ?? "")")
+                    }
+                    .font(.headline)
+                    .foregroundColor(.gray)
+                    
+                    HStack {
+                        Image(systemName: "person")
+                        Text("Residents: \(String(viewModel.location?.residents.count ?? 0))")
+                    }
+                    .font(.headline)
+                    .foregroundColor(.gray)
+                    
+                    HStack {
+                        Image(systemName: "globe")
+                        Text("Dimension: \(viewModel.location?.dimension ?? "")")
+                    }
+                    .font(.headline)
+                    .foregroundColor(.gray)
+                    
+                    Spacer()
+                }
+                Spacer()
+            }
+            .padding(.horizontal)
+            
         }
+        .navigationTitle("Location")
+        .background(Color(.systemBackground))
         .onAppear {
             viewModel.loadLocation()
         }
     }
 }
+

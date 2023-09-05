@@ -9,9 +9,8 @@ import SwiftUI
 import Combine
 
 struct ProfileImageView: View {
-    @State private var imageData: Data = Data()
-    @State private var image: UIImage?
     private let id: Int
+    @StateObject var imageManager = ImageLoader()
     
     init(id: Int) {
         self.id = id
@@ -19,28 +18,17 @@ struct ProfileImageView: View {
     
     var body: some View {
         Group {
-            if let image = image {
-                Image(uiImage: image)
-                    .resizable()
-                    .scaledToFit()
-                    .cornerRadius(10)
-            } else {
-                ProgressView("Loading...")
-            }
+            Image(uiImage: imageManager.image)
+                .resizable()
+                .scaledToFit()
+                .cornerRadius(10)
         }
         .onAppear {
-            Task {
-                do {
-                    let imageUseCase = ImageUseCase()
-                    let response = try await imageUseCase.getImage(id: id)
-                    DispatchQueue.main.async {
-                        self.image = UIImage(data: response)
-                    }
-                } catch  {
-                    DispatchQueue.main.async {
-                        self.image = UIImage()
-                    }
-                }
+            imageManager.loadImage(id: id)
+        }
+        .overlay {
+            if imageManager.isLoading {
+                ProgressView()
             }
         }
     }
