@@ -7,8 +7,10 @@
 
 import Foundation
 
-struct CharacterModel: Decodable {
-    let id: Int
+struct CharacterModel: Decodable, Identifiable, Hashable {
+    var id: UUID? = UUID()
+    
+    let _id: Int
     let name: String
     let species: String
     let gender: String
@@ -23,8 +25,15 @@ struct CharacterModel: Decodable {
         case new, downloaded, failed
     }
     
-    struct Location: Decodable {
+    struct Location: Decodable, Identifiable, Hashable {
+        var id: UUID? = UUID()
+        
         let name: String
         let url: String
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case _id = "id"
+        case name, species, gender, image, location
     }
 }
