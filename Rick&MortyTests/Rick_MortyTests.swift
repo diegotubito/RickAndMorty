@@ -6,7 +6,6 @@
 //
 
 import XCTest
-@testable import Rick_Morty
 
 final class Rick_MortyTests: XCTestCase {
 
@@ -28,7 +27,7 @@ final class Rick_MortyTests: XCTestCase {
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
-        self.measure {
+        measure {
             // Put the code you want to measure the time of here.
         }
     }
