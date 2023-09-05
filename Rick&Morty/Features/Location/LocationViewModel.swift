@@ -8,11 +8,28 @@
 import SwiftUI
 
 class LocationViewModel: ObservableObject {
-    var locationReceived: CharacterModel.Location
+    var character: CharacterModel
+    @Published var location: LocationResult?
     
-    init(location: CharacterModel.Location) {
-        self.locationReceived = location
+    init(character: CharacterModel) {
+        self.character = character
     }
-    
+
+    @MainActor
+    func loadLocation() {
+        Task {
+            do {
+                let usecase = LocationUseCase()
+                let response = try await usecase.getLocation(url: character.location.url)
+                DispatchQueue.main.async {
+                    self.location = response
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
     
 }

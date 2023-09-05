@@ -13,13 +13,13 @@ struct LocationView: View {
     
     var body: some View {
         VStack {
-            Text(viewModel.locationReceived.name)
+            Text(viewModel.location?.name ?? "")
+            Text("type: " + (viewModel.location?.type ?? ""))
+            Text("Number of residents: " + String(viewModel.location?.residents.count ?? 0))
+            Text("Dimension: " + (viewModel.location?.dimension ?? ""))
         }
-    }
-}
-
-struct LocationView_Previews: PreviewProvider {
-    static var previews: some View {
-        LocationView(viewModel: LocationViewModel(location: CharacterModel.Location(name: "Name", url: "https://rickandmortyapi.com/api/location/3")))
+        .onAppear {
+            viewModel.loadLocation()
+        }
     }
 }

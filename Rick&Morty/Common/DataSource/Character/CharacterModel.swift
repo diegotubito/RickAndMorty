@@ -16,14 +16,7 @@ struct CharacterModel: Decodable, Identifiable, Hashable {
     let gender: String
     let image: String
     let location: Location
-    
-    var imageState: ImageState? = .new
-    var imageData: Data?
     var isFavourite: Bool?
-    
-    enum ImageState: Decodable {
-        case new, downloaded, failed
-    }
     
     struct Location: Decodable, Identifiable, Hashable {
         var id: UUID? = UUID()

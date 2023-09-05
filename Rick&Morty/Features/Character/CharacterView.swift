@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CharacterView: View {
     @StateObject var viewModel = CharacterViewModel()
-    @State private var path = [CharacterModel.Location]()
+    @State private var path = [CharacterModel]()
     
     var body: some View {
         NavigationStack(path: $path) {
@@ -23,9 +23,10 @@ struct CharacterView: View {
                         }
         
                 }
+                .listStyle(.grouped)
             }
-            .navigationDestination(for: CharacterModel.Location.self) { location in
-                LocationView(viewModel: LocationViewModel(location: location))
+            .navigationDestination(for: CharacterModel.self) { character in
+                LocationView(viewModel: LocationViewModel(character: character))
             }
             .navigationTitle("Rick & Morty")
         }
