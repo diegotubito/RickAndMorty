@@ -23,7 +23,7 @@ struct CharacterView: View {
                         }
         
                 }
-                .listStyle(.grouped)
+                .listStyle(.plain)
             }
             .navigationDestination(for: CharacterModel.self) { character in
                 LocationView(viewModel: LocationViewModel(character: character))

@@ -12,42 +12,59 @@ struct LocationView: View {
     @StateObject var viewModel: LocationViewModel
     
     var body: some View {
-        ScrollView {
-            HStack {
-                VStack(alignment: .leading, spacing: 20) {
-                    
-                    Text(viewModel.location?.name ?? "")
-                        .font(.title)
-                        .fontWeight(.bold)
-                    
-                    HStack {
-                        Image(systemName: "info.circle")
-                        Text("Type: \(viewModel.location?.type ?? "")")
+        ZStack {
+            LinearGradient(gradient: Gradient(colors: [.black, .black, .blue]), startPoint: .top, endPoint: .bottom)
+                .ignoresSafeArea()
+            ScrollView {
+                VStack(spacing: 0) {
+                    VStack {
+                        HStack {
+                            Text(viewModel.character.name + " last location")
+                                .font(.title3)
+                                .fontWeight(.bold)
+                                .multilineTextAlignment(.leading)
+                            Spacer()
+                        }
                     }
-                    .font(.headline)
-                    .foregroundColor(.gray)
                     
-                    HStack {
-                        Image(systemName: "person")
-                        Text("Residents: \(String(viewModel.location?.residents.count ?? 0))")
+                    VStack(spacing: 20) {
+                        Text(viewModel.location?.name ?? "")
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white.opacity(0.8))
+                        
+                        HStack {
+                            Image(systemName: "info.circle")
+                            Text("Type: \(viewModel.location?.type ?? "")")
+                            Spacer()
+                        }
+                        .font(.headline)
+                        .foregroundColor(.gray)
+                        
+                        HStack {
+                            Image(systemName: "person")
+                            Text("Residents: \(String(viewModel.location?.residents.count ?? 0))")
+                            Spacer()
+                        }
+                        .font(.headline)
+                        .foregroundColor(.gray)
+                        
+                        HStack {
+                            Image(systemName: "globe")
+                            Text("Dimension: \(viewModel.location?.dimension ?? "")")
+                            Spacer()
+                        }
+                        .font(.headline)
+                        .foregroundColor(.gray)
                     }
-                    .font(.headline)
-                    .foregroundColor(.gray)
-                    
-                    HStack {
-                        Image(systemName: "globe")
-                        Text("Dimension: \(viewModel.location?.dimension ?? "")")
-                    }
-                    .font(.headline)
-                    .foregroundColor(.gray)
-                    
-                    Spacer()
+                    .padding()
+                    .background(Color.cyan.opacity(0.2))
+                    .cornerRadius(10)
                 }
-                Spacer()
+                .padding([.horizontal, .top], 32)
             }
-            .padding(.horizontal)
-            
         }
+        .navigationBarTitleDisplayMode(.inline)
         .navigationTitle("Location")
         .background(Color(.systemBackground))
         .onAppear {
