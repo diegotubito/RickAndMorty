@@ -14,6 +14,10 @@
 		F15FB91E2AA77C3A001580D2 /* Rick_MortyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15FB91D2AA77C3A001580D2 /* Rick_MortyTests.swift */; };
 		F15FB9282AA77C3A001580D2 /* Rick_MortyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15FB9272AA77C3A001580D2 /* Rick_MortyUITests.swift */; };
 		F15FB92A2AA77C3A001580D2 /* Rick_MortyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15FB9292AA77C3A001580D2 /* Rick_MortyUITestsLaunchTests.swift */; };
+		F15FB93B2AA78951001580D2 /* ApiNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15FB93A2AA78951001580D2 /* ApiNetwork.swift */; };
+		F15FB93D2AA78958001580D2 /* ApiNetworkMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15FB93C2AA78958001580D2 /* ApiNetworkMock.swift */; };
+		F15FB93F2AA78964001580D2 /* ApiNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15FB93E2AA78964001580D2 /* ApiNetworkModel.swift */; };
+		F15FB9412AA78A29001580D2 /* ApiNetworkConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15FB9402AA78A29001580D2 /* ApiNetworkConfiguration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		F15FB9232AA77C3A001580D2 /* Rick&MortyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rick&MortyUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F15FB9272AA77C3A001580D2 /* Rick_MortyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rick_MortyUITests.swift; sourceTree = "<group>"; };
 		F15FB9292AA77C3A001580D2 /* Rick_MortyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rick_MortyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F15FB93A2AA78951001580D2 /* ApiNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNetwork.swift; sourceTree = "<group>"; };
+		F15FB93C2AA78958001580D2 /* ApiNetworkMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNetworkMock.swift; sourceTree = "<group>"; };
+		F15FB93E2AA78964001580D2 /* ApiNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNetworkModel.swift; sourceTree = "<group>"; };
+		F15FB9402AA78A29001580D2 /* ApiNetworkConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNetworkConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,8 +155,20 @@
 		F15FB9382AA77CEB001580D2 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				F15FB9392AA78942001580D2 /* Network */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		F15FB9392AA78942001580D2 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F15FB93A2AA78951001580D2 /* ApiNetwork.swift */,
+				F15FB93C2AA78958001580D2 /* ApiNetworkMock.swift */,
+				F15FB93E2AA78964001580D2 /* ApiNetworkModel.swift */,
+				F15FB9402AA78A29001580D2 /* ApiNetworkConfiguration.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,7 +301,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F15FB93B2AA78951001580D2 /* ApiNetwork.swift in Sources */,
+				F15FB93D2AA78958001580D2 /* ApiNetworkMock.swift in Sources */,
+				F15FB9412AA78A29001580D2 /* ApiNetworkConfiguration.swift in Sources */,
 				F15FB90F2AA77C39001580D2 /* ContentView.swift in Sources */,
+				F15FB93F2AA78964001580D2 /* ApiNetworkModel.swift in Sources */,
 				F15FB90D2AA77C39001580D2 /* Rick_MortyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
